@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/line1"
-        android:layout_marginBottom="-10dp"
+        android:layout_marginBottom="-80dp"
         android:layout_marginLeft="5dp"
         android:text="Student ID"
         android:textStyle="bold" />
@@ -50,6 +50,7 @@
         android:layout_alignBottom="@+id/Student_caption"
         android:layout_marginBottom="-52dp"
         android:layout_marginLeft="5dp"
+        android:text="12"
         android:hint="Enter id "/>
 
 
@@ -58,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Student_editbox"
-        android:layout_marginBottom="-10dp"
+        android:layout_marginBottom="-70dp"
         android:layout_marginLeft="5dp"
         android:text="Email id"
         android:textStyle="bold" />
@@ -70,6 +71,7 @@
         android:layout_alignBottom="@+id/Email_caption"
         android:layout_marginBottom="-52dp"
         android:layout_marginLeft="5dp"
+        android:text="dfnnsddf"
         android:hint="Enter email-id "/>
 
     <TextView
@@ -77,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Email_editbox"
-        android:layout_marginBottom="-10dp"
+        android:layout_marginBottom="-70dp"
         android:layout_marginLeft="5dp"
         android:text="Course Name"
         android:textStyle="bold" />
@@ -89,13 +91,14 @@
         android:layout_alignBottom="@+id/Course_caption"
         android:layout_marginBottom="-52dp"
         android:layout_marginLeft="5dp"
+        android:text="sdffsf"
         android:hint="Enter course name "/>
     <TextView
         android:id="@+id/Instructor_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Course_editbox"
-        android:layout_marginBottom="-10dp"
+        android:layout_marginBottom="-70dp"
         android:layout_marginLeft="5dp"
         android:text="Instructor Name"
         android:textStyle="bold" />
@@ -107,6 +110,7 @@
         android:layout_alignBottom="@+id/Instructor_caption"
         android:layout_marginBottom="-50dp"
         android:layout_marginLeft="5dp"
+        android:text="fsdfsdfsf"
         android:hint="Enter instructor name "/>
 
     <Button

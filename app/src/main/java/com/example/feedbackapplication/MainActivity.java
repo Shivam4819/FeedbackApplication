@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.OutputStream;
@@ -18,6 +20,8 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     EditText instructorname;
     Button submit;
     long student=0;
-
+    JSONObject jsonObject=new JSONObject();
+    Map obj=new HashMap();
 
      String  email=null,course=null,instructor=null;
     @Override
@@ -42,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         submit=findViewById(R.id.submit_button);
         submit.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-
             @Override
             public void onClick(View v) {
                 student=Long.parseLong(studentId.getText().toString());
@@ -51,8 +55,21 @@ public class MainActivity extends AppCompatActivity {
                 instructor=instructorname.getText().toString();
                 System.out.println("in button");
 
-                GetData get=new GetData();
-                get.execute();
+
+                try {
+                    jsonObject.put("k1",student);
+                    jsonObject.put("k2",email);
+                    jsonObject.put("k3",course);
+                    jsonObject.put("k4",instructor);
+                    GetData get=new GetData();
+                    String jsonString=jsonObject.toString();
+                    get.execute(jsonString);
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
     }
