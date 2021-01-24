@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.feedbackapplication.api.FeedbackDataApi;
+import com.example.feedbackapplication.request.FeedbackDataReq;
+import com.example.feedbackapplication.requestApi.SendDataToServlet;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     Button submit;
     long student=0;
     JSONObject jsonObject=new JSONObject();
-    Map obj=new HashMap();
 
      String  email=null,course=null,instructor=null;
     @Override
@@ -46,24 +49,30 @@ public class MainActivity extends AppCompatActivity {
         instructorname=findViewById(R.id.Instructor_editbox);
         submit=findViewById(R.id.submit_button);
         submit.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+
             @Override
             public void onClick(View v) {
                 student=Long.parseLong(studentId.getText().toString());
                 email=emailId.getText().toString();
                 course=coursename.getText().toString();
                 instructor=instructorname.getText().toString();
-                System.out.println("in button");
-
 
                 try {
                     jsonObject.put("k1",student);
                     jsonObject.put("k2",email);
                     jsonObject.put("k3",course);
                     jsonObject.put("k4",instructor);
-                    GetData get=new GetData();
-                    String jsonString=jsonObject.toString();
-                    get.execute(jsonString);
+
+                    FeedbackDataReq req=new FeedbackDataReq();
+                    req.setId(student);
+                    req.setEmail(email);
+                    req.setCoursename(course);
+                    req.setInstructorname(instructor);
+
+                    FeedbackDataApi dataApi=new FeedbackDataApi();
+                    dataApi.execute(req);
+
+
 
 
                 } catch (JSONException e) {
