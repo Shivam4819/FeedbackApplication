@@ -5,12 +5,8 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.example.feedbackapplication.request.FeedbackDataReq;
-import com.example.feedbackapplication.responseApi.ReadResponse;
+import com.example.feedbackapplication.response.FeedbackDataRes;
 import com.google.gson.Gson;
-
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -50,24 +46,24 @@ public class FeedbackDataApi extends AsyncTask<Object,Void,Void> {
                 System.out.println("response is--" + res1);
             }
         }catch (Exception e){
-            System.out.println("no connecetion--"+e);
+            System.out.println("no connection--"+e);
         }
         return null;
     }
 
     public String response(HttpURLConnection conn) {
         try {
-            System.out.println("in respnse");
-            StringBuffer output = new StringBuffer();
+            System.out.println("in response");
+            StringBuilder output = new StringBuilder();
             InputStream inputStream = conn.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String s = "";
             while ((s = bufferedReader.readLine()) != null)
                 output.append(s);
 
-            JSONObject jsonObject = new JSONObject(output.toString());
-            String res = (String) jsonObject.get("response");
-            return res;
+            Gson gson=new Gson();
+            FeedbackDataRes res=gson.fromJson(output.toString(),FeedbackDataRes.class);
+            return res.getResponseString();
         }catch (Exception e){
             System.out.println("unable to read response--"+e);
         }

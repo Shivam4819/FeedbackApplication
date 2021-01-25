@@ -10,116 +10,69 @@
         android:id="@+id/Caption1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Course Instructor Feedback"
+        android:text="Feedback"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="5dp"
-        android:textSize="25dp"
+        android:textSize="50dp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/Caption2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Caption1"
-        android:layout_marginBottom="-28dp"
-        android:layout_marginLeft="5dp"
-        android:text="Fill out the form with honesty"
-        android:textSize="18dp" />
-    <View
+     <View
         android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/black"
-        android:layout_alignBottom="@+id/Caption2"
+        android:layout_alignBottom="@+id/Caption1"
         android:layout_marginBottom="-5dp"/>
 
     <TextView
-        android:id="@+id/Student_caption"
+        android:id="@+id/Username_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/line1"
         android:layout_marginBottom="-80dp"
-        android:layout_marginLeft="5dp"
-        android:text="Student ID"
+        android:layout_marginLeft="7dp"
+        android:text="Username"
+        android:textSize="15dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/Student_editbox"
+        android:id="@+id/Username_editbox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Student_caption"
+        android:layout_alignBottom="@+id/Username_caption"
         android:layout_marginBottom="-52dp"
-        android:layout_marginLeft="5dp"
-        android:text="12"
+        android:layout_marginLeft="7dp"
+        android:text="shivam"
         android:hint="Enter id "/>
 
 
     <TextView
-        android:id="@+id/Email_caption"
+        android:id="@+id/Password_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Student_editbox"
+        android:layout_alignBottom="@+id/Username_editbox"
         android:layout_marginBottom="-70dp"
-        android:layout_marginLeft="5dp"
-        android:text="Email id"
+        android:layout_marginLeft="7dp"
+        android:text="Password"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/Email_editbox"
+        android:id="@+id/Password_editbox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Email_caption"
+        android:layout_alignBottom="@+id/Password_caption"
         android:layout_marginBottom="-52dp"
-        android:layout_marginLeft="5dp"
-        android:text="dfnnsddf"
+        android:layout_marginLeft="7dp"
+        android:text="admin"
         android:hint="Enter email-id "/>
-
-    <TextView
-        android:id="@+id/Course_caption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Email_editbox"
-        android:layout_marginBottom="-70dp"
-        android:layout_marginLeft="5dp"
-        android:text="Course Name"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/Course_editbox"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Course_caption"
-        android:layout_marginBottom="-52dp"
-        android:layout_marginLeft="5dp"
-        android:text="sdffsf"
-        android:hint="Enter course name "/>
-    <TextView
-        android:id="@+id/Instructor_caption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Course_editbox"
-        android:layout_marginBottom="-70dp"
-        android:layout_marginLeft="5dp"
-        android:text="Instructor Name"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/Instructor_editbox"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Instructor_caption"
-        android:layout_marginBottom="-50dp"
-        android:layout_marginLeft="5dp"
-        android:text="fsdfsdfsf"
-        android:hint="Enter instructor name "/>
 
     <Button
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Instructor_editbox"
+        android:layout_alignBottom="@+id/Password_editbox"
         android:layout_marginLeft="150dp"
         android:layout_marginBottom="-90dp"
+        android:onClick="sendMessage"
         android:hint="submit" />
 
     />
