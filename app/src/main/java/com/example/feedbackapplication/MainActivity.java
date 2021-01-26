@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         LoginApi loginApi=new LoginApi();
         loginApi.execute(loginReq);
-        Intent intent=new Intent(MainActivity.this, FeedbackFormActivity.class);
-        startActivity(intent);
-        finish();
+       // Intent intent=new Intent(MainActivity.this, FeedbackFormActivity.class);
+       // startActivity(intent);
+       // finish();
     }
 
 }
