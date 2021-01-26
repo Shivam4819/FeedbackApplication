@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.feedbackapplication.activity.FeedbackFormActivity;
-import com.example.feedbackapplication.api.FeedbackDataApi;
-import com.example.feedbackapplication.request.FeedbackDataReq;
+import com.example.feedbackapplication.api.LoginApi;
+import com.example.feedbackapplication.request.LoginReq;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("username--"+user);
         System.out.println("passs--"+pass);
 
+        LoginReq loginReq=new LoginReq();
+        loginReq.setUsername(user);
+        loginReq.setPassword(pass);
+
+        LoginApi loginApi=new LoginApi();
+        loginApi.execute(loginReq);
         Intent intent=new Intent(MainActivity.this, FeedbackFormActivity.class);
         startActivity(intent);
         finish();
