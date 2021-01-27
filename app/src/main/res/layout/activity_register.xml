@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.RegisterActivity">
 
     <TextView
         android:id="@+id/Caption1"
@@ -15,7 +15,7 @@
         android:layout_marginLeft="5dp"
         android:textSize="50dp"
         android:textStyle="bold" />
-     <View
+    <View
         android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -24,14 +24,35 @@
         android:layout_marginBottom="-5dp"/>
 
     <TextView
-        android:id="@+id/Username_caption"
+        android:id="@+id/Fullname_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/line1"
         android:layout_marginBottom="-80dp"
         android:layout_marginLeft="7dp"
-        android:text="Username"
+        android:text="Fullname"
         android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/Fullname_editbox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Fullname_caption"
+        android:layout_marginBottom="-52dp"
+        android:layout_marginLeft="7dp"
+        android:hint="Enter name "/>
+
+
+
+    <TextView
+        android:id="@+id/Username_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Fullname_editbox"
+        android:layout_marginBottom="-70dp"
+        android:layout_marginLeft="7dp"
+        android:text="username"
         android:textStyle="bold" />
 
     <EditText
@@ -41,8 +62,7 @@
         android:layout_alignBottom="@+id/Username_caption"
         android:layout_marginBottom="-52dp"
         android:layout_marginLeft="7dp"
-        android:hint="Enter id "/>
-
+        android:hint="username "/>
 
     <TextView
         android:id="@+id/Password_caption"
@@ -61,27 +81,17 @@
         android:layout_alignBottom="@+id/Password_caption"
         android:layout_marginBottom="-52dp"
         android:layout_marginLeft="7dp"
-        android:hint="Enter password"/>
+        android:hint="Password "/>
 
     <Button
-        android:id="@+id/submit_button"
+        android:id="@+id/register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Password_editbox"
         android:layout_marginLeft="150dp"
         android:layout_marginBottom="-90dp"
-        android:onClick="sendMessage"
-        android:hint="Login" />
-
-    <Button
-        android:id="@+id/Register_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/submit_button"
-        android:layout_marginLeft="150dp"
-        android:layout_marginBottom="-90dp"
         android:onClick="registerUser"
-        android:hint="Register" />
+        android:hint="Login" />
 
 
 </RelativeLayout>

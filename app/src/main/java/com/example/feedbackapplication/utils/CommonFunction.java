@@ -34,14 +34,13 @@ public class CommonFunction {
             }
             return null;
          } catch (Exception e) {
-            System.out.println("conncetion prob---"+e);
+            System.out.println("connection prob---"+e);
             return null;
         }
 
     }
     public String readResponse(HttpURLConnection conn) {
         try {
-            System.out.println("in response");
             StringBuilder output = new StringBuilder();
             InputStream inputStream = conn.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -51,7 +50,7 @@ public class CommonFunction {
             return output.toString();
 
         } catch (Exception e) {
-            System.out.println("in res---"+e);
+            System.out.println("problem in common function readResponse---"+e);
         }
         return null;
     }

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.feedbackapplication.activity.FeedbackFormActivity;
+import com.example.feedbackapplication.activity.RegisterActivity;
 import com.example.feedbackapplication.api.LoginApi;
 import com.example.feedbackapplication.request.LoginReq;
 
@@ -29,21 +30,23 @@ public class MainActivity extends AppCompatActivity {
         login=findViewById(R.id.submit_button);
     }
     public void sendMessage(View view){
-        user=username.getText().toString();
-        pass=password.getText().toString();
-
-        System.out.println("username--"+user);
-        System.out.println("passs--"+pass);
 
         LoginReq loginReq=new LoginReq();
-        loginReq.setUsername(user);
-        loginReq.setPassword(pass);
+        loginReq.setUsername(username.getText().toString());
+        loginReq.setPassword(password.getText().toString());
 
         LoginApi loginApi=new LoginApi();
         loginApi.execute(loginReq);
-       // Intent intent=new Intent(MainActivity.this, FeedbackFormActivity.class);
-       // startActivity(intent);
-       // finish();
+
+      //   Intent intent=new Intent(MainActivity.this, FeedbackFormActivity.class);
+      //  startActivity(intent);
+      //  finish();
+    }
+
+    public void registerUser(View view){
+        Intent intent=new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
