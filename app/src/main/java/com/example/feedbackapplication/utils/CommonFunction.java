@@ -4,6 +4,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,8 +16,10 @@ import java.nio.charset.StandardCharsets;
 
 public class CommonFunction {
 
+    ObjectMapper mapper = new ObjectMapper();
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public String sendDataToServer(String POST_URL, String data){
+    public String sendDataToServer(String POST_URL, String data) {
 
         try {
             URL url = new URL(POST_URL);
@@ -28,17 +31,18 @@ public class CommonFunction {
             osw.write(data);
             osw.flush();
             osw.close();
-            int responseCode=conn.getResponseCode();
-            if (responseCode==HttpURLConnection.HTTP_OK){
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
                 return readResponse(conn);
             }
             return null;
-         } catch (Exception e) {
-            System.out.println("connection prob---"+e);
+        } catch (Exception e) {
+            System.out.println("connection prob---" + e);
             return null;
         }
 
     }
+
     public String readResponse(HttpURLConnection conn) {
         try {
             StringBuilder output = new StringBuilder();
@@ -50,8 +54,21 @@ public class CommonFunction {
             return output.toString();
 
         } catch (Exception e) {
-            System.out.println("problem in common function readResponse---"+e);
+            System.out.println("problem in common function readResponse---" + e);
         }
         return null;
+    }
+
+    public <T> T convertJsonToJava(String jsonString, Class<T> obj) throws Exception {
+
+        T result = null;
+        result = mapper.readValue(jsonString, obj);
+        return result;
+    }
+
+    public String convertJavaToJson(Object object) throws Exception {
+        String jsonResult = null;
+        jsonResult = mapper.writeValueAsString(object);
+        return jsonResult;
     }
 }

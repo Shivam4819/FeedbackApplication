@@ -10,7 +10,7 @@ import com.example.feedbackapplication.response.FeedbackDataRes;
 import com.google.gson.Gson;
 
 public class FeedbackDataApi extends AsyncTask<Object,Void,Void> {
-    String POST_URL = "http://192.168.29.205:8080/JasonServlet/display";
+    String POST_URL = "http://192.168.29.205:8080/FormDataApi";
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -23,6 +23,7 @@ public class FeedbackDataApi extends AsyncTask<Object,Void,Void> {
             String responseResult = commonFunction.sendDataToServer(POST_URL,res);
 
             System.out.println("responseresult-"+responseResult);
+
             Gson gson=new Gson();
             FeedbackDataRes dataRes = gson.fromJson(responseResult,FeedbackDataRes.class);
             System.out.println("data--"+dataRes.getResponseString());

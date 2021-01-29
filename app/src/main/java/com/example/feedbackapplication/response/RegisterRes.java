@@ -1,13 +1,13 @@
 package com.example.feedbackapplication.response;
 
 public class RegisterRes {
-    private String registereResponse;
+    private String registerResponse;
 
-    public String getRegistereResponse() {
-        return registereResponse;
+    public String getRegisterResponse() {
+        return registerResponse;
     }
 
-    public void setRegistereResponse(String registereResponse) {
-        this.registereResponse = registereResponse;
+    public void setRegisterResponse(String registerResponse) {
+        this.registerResponse = registerResponse;
     }
 }

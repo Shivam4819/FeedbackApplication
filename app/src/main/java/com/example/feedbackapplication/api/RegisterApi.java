@@ -10,7 +10,7 @@ import com.example.feedbackapplication.utils.CommonFunction;
 import com.google.gson.Gson;
 
 public class RegisterApi extends AsyncTask<Object,Void,Void> {
-    String POST_URL = "http://192.168.29.205:8080/JasonServlet/registerApi";
+    String POST_URL = "http://192.168.29.205:8080/registerApi";
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected Void doInBackground(Object... objects) {
@@ -22,7 +22,7 @@ public class RegisterApi extends AsyncTask<Object,Void,Void> {
 
             Gson gson = new Gson();
             RegisterRes registerRes = gson.fromJson(result, RegisterRes.class);
-            System.out.println("res from registration--" + registerRes.getRegistereResponse());
+            System.out.println("res from registration--" + registerRes.getRegisterResponse());
         }catch (Exception e){
             System.out.println("problem-"+e);
         }

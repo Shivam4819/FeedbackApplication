@@ -10,7 +10,7 @@ import com.example.feedbackapplication.response.LoginRes;
 import com.google.gson.Gson;
 
 public class LoginApi extends AsyncTask<Object,Void,Void> {
-    String POST_URL = "http://192.168.29.205:8080/JasonServlet/loginApi";
+    String POST_URL = "http://192.168.29.205:8080/loginApi";
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
